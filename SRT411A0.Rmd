@@ -1,0 +1,120 @@
+---
+title: "Assignment_0"
+author: "Ovin Gamage"
+date: "February 21, 2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{R}
+
+setwd("/root/Documents/SRT411/Assignment0")
+```
+
+##3.2
+```{R}
+a = (2017-2014)
+b = (2014-1997)
+c = 100
+(a/b)*c
+```
+
+##3.4
+```{R}
+vector=c(4,5,8,11)
+sum(vector)
+```
+
+##3.5
+```{R}
+random_numbers=rnorm(100)
+plot(random_numbers)
+```
+
+#4.0
+```{R}
+help(sqrt)
+```
+
+#5.0
+```{R}
+source("firstscript.R")
+```
+
+#6.2
+```{R}
+P <- seq(from=31, to=60, by=1)
+Q <- matrix(P, ncol=5, nrow=6)
+Q
+```
+
+#6.3 and 7.0
+```{R}
+x1 <- rnorm(100)
+x2 <- rnorm(100)
+x3 <- rnorm(100)
+t <- data.frame(a=x1, b=x1+x2, c=x1+x2+x3)
+plot(t)
+
+
+plot(t$a, type="l", ylim=range(t),
+lwd=3, col=rgb(1,0,0,0.3))
+lines(t$b, type="s", lwd=2,
+col=rgb(0.3,0.4,0.3,0.9))
+points(t$c, pch=20, cex=4,
+col=rgb(0,0,1,0.3))
+```
+
+#Q8.0
+```{R}
+d = data.frame(a = c(3,4,5), b = c(12,43,54))
+write.table(d, file="tst1.txt",row.names = FALSE)
+d2 = read.table(file="tst1.txt",header = TRUE)
+d2 = d$g * 5
+d3 = write.table(d2, file="tst2.txt")
+```
+
+#Q9.0
+```{R}
+v <- rnorm(100)
+v2 <- sqrt(v)
+mean(v2)
+v2
+```
+
+#Q10.2
+```{R}
+Date <- c("20190221","20201205","20200902")
+Presents <- c(2,8,12)
+plot(Date,Presents)
+```
+
+#Q11.2
+```{R}
+num <- seq(from = 1, to = 100, by=1)
+f=c()
+for(d in 1:100)
+{
+if(num[d]<5 | num[d]>90)
+  {f[d]=num[d]*10}
+else
+  {f[d]=num[d]*0.1}
+}
+f
+```
+
+#Q11.3
+```{R}
+fun1 = function(arg1)
+{len = length(arg1)
+  for(q in 1:len)
+{if (arg1[q] < 5 | arg1[q] > 90)
+{arg1[q] = arg1[q] * 10}
+else
+{arg1[q] = arg1[q] * 0.1}}
+  return (arg1)
+}
+m=5:40
+fun1(arg1=m)
+```
